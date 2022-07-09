@@ -202,6 +202,11 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include hardware/oplus/sepolicy/qti/SEPolicy.mk
 
+# Touch
+SOONG_CONFIG_NAMESPACES += OPLUS_LINEAGE_TOUCH_HAL
+SOONG_CONFIG_OPLUS_LINEAGE_TOUCH_HAL := INCLUDE_DIR
+SOONG_CONFIG_OPLUS_LINEAGE_TOUCH_HAL_INCLUDE_DIR := $(COMMON_PATH)/touch/include
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
