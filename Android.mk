@@ -38,6 +38,22 @@ $(CNE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $@
 	$(hide) ln -sf /vendor/lib64/$(notdir $@) $@
 
+EGL_LIB_SYMLINKS := $(TARGET_OUT_VENDOR)/lib
+$(EGL_LIB_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "EGL lib symlinks: $@"
+	@mkdir -p $@
+	$(hide) ln -sf egl/libEGL_adreno.so $@/libEGL_adreno.so
+	$(hide) ln -sf egl/libGLESv2_adreno.so $@/libGLESv2_adreno.so
+	$(hide) ln -sf egl/libq3dtools_adreno.so $@/libq3dtools_adreno.so
+
+EGL_LIB64_SYMLINKS := $(TARGET_OUT_VENDOR)/lib64
+$(EGL_LIB64_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "EGL lib64 symlinks: $@"
+	@mkdir -p $@
+	$(hide) ln -sf egl/libEGL_adreno.so $@/libEGL_adreno.so
+	$(hide) ln -sf egl/libGLESv2_adreno.so $@/libGLESv2_adreno.so
+	$(hide) ln -sf egl/libq3dtools_adreno.so $@/libq3dtools_adreno.so
+
 IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
 IMS_SYMLINKS := $(addprefix $(TARGET_OUT_SYSTEM_EXT_APPS_PRIVILEGED)/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
 $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
@@ -115,5 +131,5 @@ $(WIFI_FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /mnt/vendor/persist/wlan_mac.bin $@/wlan/qca_cld/wlan_mac.bin
 	$(hide) ln -sf /odm/vendor/etc/wifi/WCNSS_qcom_cfg.ini $@/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
-ALL_DEFAULT_INSTALLED_MODULES += $(CNE_SYMLINKS) $(IMS_SYMLINKS) $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_CDSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS) $(RFS_MSM_SLPI_SYMLINKS) $(RFS_MSM_WPSS_SYMLINKS) $(WIFI_FIRMWARE_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(CNE_SYMLINKS) $(EGL_LIB_SYMLINKS) $(EGL_LIB64_SYMLINKS) $(IMS_SYMLINKS) $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_CDSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS) $(RFS_MSM_SLPI_SYMLINKS) $(RFS_MSM_WPSS_SYMLINKS) $(WIFI_FIRMWARE_SYMLINKS)
 endif
