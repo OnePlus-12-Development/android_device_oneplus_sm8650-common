@@ -10,6 +10,9 @@ subsystem adf
 # Camera
 /dev/explorer_preisp                           0660    cameraserver    camera
 
+# Charger
+/sys/class/oplus_chg/*  mmi_charging_enable    0660    system  system
+
 # Display
 firmware_directories /mnt/vendor/persist/display/
 
