@@ -72,12 +72,6 @@ function blob_fixup() {
         vendor/etc/media_kalama/video_system_specs.json)
             sed -i "/max_retry_alloc_output_timeout/ s/1000/0/" "${2}"
             ;;
-        vendor/lib/libgui1_vendor.so)
-            "${PATCHELF}" --replace-needed "libui.so" "libui-v30.so" "${2}"
-            ;;
-        vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
-            "${SIGSCAN}" -p "23 0B 00 94" -P "1F 20 03 D5" -f "${2}"
-            ;;
     esac
 }
 
