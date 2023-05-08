@@ -1,4 +1,6 @@
-# Copyright (c) 2012-2015, 2017-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2015, 2017-2021, The Linux Foundation. All rights reserved.
+#
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -24,11 +26,53 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted (subject to the limitations in the
+# disclaimer below) provided that the following conditions are met:
+#
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#
+#     * Neither the name of Qualcomm Innovation Center, Inc. nor the names of
+#       its contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+# GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+# HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+# GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 
 # Firmware directory Path
 # Below macro will be read by uevent and path will
 # be added to search path for firmware loading
 firmware_directories /vendor/firmware_mnt/image/
+
+subsystem dma_heap
+    devname uevent_devpath
+    dirname /dev/dma_heap
+
+subsystem mem_buf_vm
+    devname uevent_devpath
+    dirname /dev/mem_buf_vm
 
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0660   system     oem_2901
@@ -42,6 +86,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/kgsl-2d1             0666   root       root
 /dev/ion                  0664   system     system
 /dev/membuf               0664   system     system
+/dev/mem_buf_vm/*         0444   system     system
+/dev/dma_heap/qcom,*      0444   system     system
 /dev/rtc0                 0660   system     system
 /dev/smd0                 0660   system     system
 /dev/smd4                 0660   system     system
@@ -52,6 +98,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/ccid_bridge          0660   system     system
 /dev/ipa                  0660   radio      radio
 /dev/wwan_ioctl           0660   radio      radio
+/dev/ipa_lnx_stats_ioctl  0640   radio      radio
 /dev/ipaNatTable          0660   radio      radio
 /dev/rmnet_ctrl           0660   usb        usb
 /dev/dpl_ctrl             0660   usb        usb
@@ -59,11 +106,15 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/ipa_adpl             0660   system     oem_2905
 /dev/synx_device          0660   root       camera
 /dev/hab                  0666   system     system
-/dev/hgsl                 0666   system     system
 /dev/iio:device*          0664   system     system
+/dev/qmc_dma              0660   radio      radio
+/dev/qmc_cma              0660   radio      radio
 
 #permissions for UFS RPMB BSG device node
 /dev/0:0:0:49476          0600   system     system
+
+#permissions for GPT listener on LUN4
+/dev/0:0:0:4              0600   system     root
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -73,6 +124,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/smd3                 0660   bluetooth  bluetooth
 /dev/btpower              0660   bluetooth  system
 /dev/btfmslim             0660   bluetooth  system
+/dev/bt_cp_ctrl           0660   bluetooth  system
+/dev/btfmcodec_dev        0660   bluetooth  system
 
 #permissions for pta
 /dev/pta                  0660   system     system
@@ -162,9 +215,11 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/adsprpc-smd-secure   0644   system     system
 /dev/system_health_monitor 0644  radio      system
 /dev/mdss_rotator         0664   system     system
+/dev/spec_sync            0660   system     system
 
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
+/dev/byte-cntr1            0660   system    oem_2902
 /dev/mhi_qdss             0660   system    oem_2902
 /sys/class/qdss_bridge/mhi_qdss  mode      0660     system   oem_2902
 
@@ -174,20 +229,28 @@ firmware_directories /vendor/firmware_mnt/image/
 
 #qvr
 /dev/qvr_external_sensor_ioctl      0660  system  system
-/dev/bus/usb/*                      0660  root    usb
-/dev/hidraw*                        0660  root    usb
-
-#rawdump
-/dev/block/platform/soc/*/by-name/rawdump       0660   root     system
+/sys/kernel/qvr_external_sensor/fd  0660  system  system
+/dev/bus/usb/001/002      0660   system     system
+/dev/bus/usb/001/003      0660   system     system
+/dev/bus/usb/001/004      0660   system     system
+/dev/bus/usb/001/005      0660   system     system
+/dev/bus/usb/002/002      0660   system     system
+/dev/bus/usb/002/003      0660   system     system
+/dev/bus/usb/002/004      0660   system     system
+/dev/bus/usb/002/005      0660   system     system
+/dev/bus/usb/003/002      0660   system     system
+/dev/bus/usb/003/003      0660   system     system
+/dev/bus/usb/003/004      0660   system     system
+/dev/bus/usb/003/005      0660   system     system
+/dev/hidraw*              0660   system     system
 
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
 /sys/devices/soc/a000000.qcom,wcnss-wlan/net/wlan0/queues/rx-* rps_cpus           0660   system     system
 /sys/devices/soc/a000000.qcom,wcnss-wlan/net/p2p0/queues/rx-* rps_cpus            0660   system     system
-/sys/devices/platform/soc/*.qcom,icnss/net/wlan*/queues/rx-* rps_cpus             0660   system     system
+/sys/devices/platform/soc/18800000.qcom,icnss/net/wlan*/queues/rx-* rps_cpus      0660   system     system
 /sys/devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan*/queues/rx-* rps_cpus      0660   system     system
-/sys/devices/platform/soc/17a10040.qcom,wcn6750/net/wlan*/queues/rx-* rps_cpus    0660   system     system
 /dev/spidev0.0            0660   system     audio
 /dev/i2c-7                0660   system     audio
 /dev/msm_camera/*         0660   system     camera
@@ -232,6 +295,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
+/dev/aud_pasthru_adsp     0660   system     audio
+/dev/msm_audio_ion_cma    0660   system     audio
+/dev/msm_audio_ion        0660   system     audio
 /dev/ttyHSL1              0660   system     system
 /dev/ttyHS1               0660   system     system
 /dev/mdm                  0660   system     radio
@@ -242,8 +308,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/i2c-5                0660   media       media
 /dev/avtimer              0660   system     audio
 /dev/spidev2.0            0660   system     audio
-/dev/spidev22.0           0660   system     audio
-/dev/spidev10.0           0660   system     audio
+/dev/msm_adsp_sleepmon    0660   system     audio
 
 # DVB devices
 /dev/dvb/adapter0/demux*  0440   media       media
@@ -320,6 +385,10 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/nfc-nci              0660    nfc         nfc
 /dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
+/dev/st21nfc              0660    nfc         nfc
+
+# eSE permissions
+/dev/st54spi_gpio         0660   system     system
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -328,6 +397,9 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # SSR devices
 /dev/subsys_*         0640   system     system
+
+# remoteproc devices
+/dev/remoteproc*      0640   system     system
 
 # Ultrasound device
 /dev/usf1                 0660   system     system
@@ -343,6 +415,10 @@ firmware_directories /vendor/firmware_mnt/image/
 #ImproveTouch device
 /dev/hbtp_input           0660   system     system
 /dev/hbtp_vm              0660   system     system
+
+# LegacyTouch device
+/sys/kernel/qts/primary/trusted_touch*    0660   system     system
+/sys/kernel/qts/secondary/trusted_touch*  0660   system     system
 
 # Add device block for FRP
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
@@ -382,6 +458,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/dual_role_usb/*	data_role	0660	system	system
 /sys/class/dual_role_usb/*	power_role	0660	system	system
 /sys/class/dual_role_usb/*	mode		0660	system	system
+
+# USB Dynamic Disable
+/sys/bus/platform/devices/a600000.ssusb	dynamic_disable	0220	root	usb
 
 #Memory Offline
 /sys/devices/system/memory/memory* state    0660 system system
@@ -483,3 +562,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_raw                     0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale                   0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale_available         0664    system  system
+
+# devcoredump data attributes
+/sys/class/devcoredump/devcd*                           data                            0600    system  system
