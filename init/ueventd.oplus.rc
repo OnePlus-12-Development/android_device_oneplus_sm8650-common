@@ -1,11 +1,25 @@
 #
-# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2022-2023 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
+subsystem adf
+    devname uevent_devname
+
+# Camera
+/dev/explorer_preisp                           0660    cameraserver    camera
+
+# Display
+firmware_directories /mnt/vendor/persist/display/
+
 # Reserve
 /dev/block/bootdevice/by-name/oplusreserve1    0660    root    system
+/dev/block/sdf9   0660   root     system
+/dev/block/bootdevice/by-name/oplusreserve3    0660    root    system
+/dev/block/sdf11   0660   root     system
+/dev/block/bootdevice/by-name/oplusreserve5    0660    root    system
+/dev/block/sdf13   0660   root     system
 
 # WiFi
-firmware_directories /odm/etc/wifi/
+firmware_directories /mnt/vendor/persist/copy/ /odm/etc/wifi/ /mnt/vendor/persist/
