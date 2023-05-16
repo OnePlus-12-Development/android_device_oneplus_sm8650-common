@@ -119,9 +119,13 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image
 
+KERNEL_LTO := none
+
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8550
-TARGET_KERNEL_CONFIG := vendor/kalama-qgki_defconfig
-TARGET_KERNEL_NO_GCC := true
+TARGET_KERNEL_CONFIG := \
+    gki_defconfig \
+    vendor/kalama_GKI.config \
+    vendor/ext_config/lineage_kalama.config
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(COMMON_PATH)/modules.blocklist
