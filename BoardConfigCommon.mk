@@ -122,6 +122,7 @@ BOARD_KERNEL_IMAGE_NAME := Image
 
 KERNEL_LTO := none
 
+TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8550
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
@@ -134,7 +135,7 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.l
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE)
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.vendor_boot))
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
-BOOT_KERNEL_MODULES := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery $(COMMON_PATH)/modules.include.vendor_ramdisk))
+#BOOT_KERNEL_MODULES := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery $(COMMON_PATH)/modules.include.vendor_ramdisk))
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
