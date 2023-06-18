@@ -8,6 +8,7 @@ camcc-kalama.ko
 qcom_ipcc.ko
 qcom_ipc_logging.ko
 qcom-pdc.ko
+thermal_minidump.ko
 qcom_tsens.ko
 rpmh-regulator.ko
 bwmon.ko
@@ -48,8 +49,10 @@ mem_buf.ko
 memory_dump_v2.ko
 minidump.ko
 msm_dma_iommu_mapping.ko
+pinctrl-crow.ko
 pinctrl-kalama.ko
 qnoc-kalama.ko
+qnoc-crow.ko
 ns.ko
 nvmem_qcom-spmi-sdam.ko
 phy-qcom-ufs.ko
@@ -62,6 +65,7 @@ qcom-dload-mode.ko
 oplus_bsp_mm_osvelte.ko
 qcom_dma_heaps.ko
 qcom_hwspinlock.ko
+debug_symbol.ko
 qcom_logbuf_vh.ko
 qcom_iommu_util.ko
 qcom_llcc_pmu.ko
