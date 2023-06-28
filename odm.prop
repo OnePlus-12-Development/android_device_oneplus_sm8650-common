@@ -1,11 +1,6 @@
 # Audio
-persist.vendor.audio.fluence.voicerec=true
-persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
-persist.vendor.audio.spv4.enable=false
-persist.vendor.audio.vbat.enabled=false
 ro.config.media_vol_steps=30
 ro.config.vc_call_vol_steps=9
-ro.vendor.audio.sdk.fluencetype=fluence
 ro.vendor.qti.va_odm.support=1
 
 # Bluetooth
@@ -13,21 +8,19 @@ persist.vendor.bluetooth.modem_nv_support=true
 
 # Display
 ro.vendor.display.sensortype=2
-vendor.display.primary_mixer_stages=9
-
-# Media
-ro.odm.build.media_performance_class=30
-vendor.media.vpp.enable=0
-vendor.media.vpp.osie.enable=0
-vendor.media.vpp.sr.enable=0
+vendor.display.enable_rc_support=0
+vendor.display.enable_rounded_corner=0
+vendor.display.disable_noise_layer=1
+vendor.display.force_dv_support=1
 
 # Radio
 persist.vendor.radio.force_on_dc=true
 persist.vendor.radio.poweron_opt=1
+persist.vendor.radio.stack_id_0=0
 persist.vendor.radio.stack_id_1=1
 ro.sys.reserve.integrate=true
-ro.vendor.oplus.radio.project=2
+ro.vendor.oplus.radio.project=1
 ro.vendor.oplus.radio.sar_regionmark=FCC
 
 # SVN
-ro.build.version.svn=61
+ro.build.version.svn=9

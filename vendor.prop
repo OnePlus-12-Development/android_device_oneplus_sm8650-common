@@ -2,57 +2,37 @@
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
-persist.vendor.audio.fluence.speaker=true
-persist.vendor.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.voicecomm=true
-persist.vendor.audio.ha_proxy.enabled=true
-persist.vendor.audio.spv4.enable=true
-persist.vendor.audio.vbat.enabled=true
-persist.vendor.audio.voicecall.speaker.stereo=true
+audio.deep_buffer.media=true
+audio.offload.video=true
+audio.sys.offload.pstimeout.secs=3
+audio.sys.noisy.broadcast.delay=600
+persist.vendor.audio.spf_restart=true
+ro.af.client_heap_size_kbyte=7168
+ro.audio.flinger_standbytime_ms=2000
+vendor.audio_hal.period_size=192
 vendor.audio.adm.buffering.ms=2
+vendor.audio.c2.preferred=true
+vendor.audio.flac.sw.decoder.24bit=true
+vendor.audio.enable.mirrorlink=false
 vendor.audio.feature.a2dp_offload.enable=true
 vendor.audio.feature.afe_proxy.enable=true
 vendor.audio.feature.battery_listener.enable=true
-vendor.audio.feature.compress_in.enable=true
-vendor.audio.feature.compress_meta_data.enable=true
-vendor.audio.feature.concurrent_capture.enable=true
-vendor.audio.feature.custom_stereo.enable=true
-vendor.audio.feature.display_port.enable=true
-vendor.audio.feature.dynamic_ecns.enable=true
-vendor.audio.feature.fluence.enable=true
-vendor.audio.feature.fm.enable=true
-vendor.audio.feature.hdmi_edid.enable=true
-vendor.audio.feature.hdmi_passthrough.enable=true
+vendor.audio.feature.dmabuf.cma.memory.enable=false
 vendor.audio.feature.hfp.enable=true
-vendor.audio.feature.incall_music.enable=true
-vendor.audio.feature.keep_alive.enable=true
 vendor.audio.feature.kpi_optimize.enable=true
-vendor.audio.feature.multi_voice_session.enable=true
-vendor.audio.feature.power_mode.enable=true
-vendor.audio.feature.ras.enable=true
-vendor.audio.feature.snd_mon.enable=true
-vendor.audio.feature.spkr_prot.enable=true
-vendor.audio.feature.src_trkn.enable=true
-vendor.audio.feature.ssrec.enable=true
-vendor.audio.feature.usb_offload.enable=true
-vendor.audio.feature.usb_offload_burst_mode.enable=true
-vendor.audio.feature.vbat.enable=true
-vendor.audio.flac.sw.decoder.24bit=true
-vendor.audio.hal.boot.timeout.ms=20000
-vendor.audio.hal.output.suspend.supported=true
-vendor.audio.hw.aac.encoder=true
+vendor.audio.hdr.record.enable=false
+vendor.audio.hw.aac.encoder=false
 vendor.audio.offload.buffer.size.kb=32
-vendor.audio.offload.gapless.enabled=true
+vendor.audio.offload.multiple.enabled=false
 vendor.audio.offload.track.enable=true
-vendor.audio.spkr_prot.tx.sampling_rate=48000
+vendor.audio.safx.pbe.enabled=false
+vendor.audio.ull_record_period_multiplier=2
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.audio.use.sw.mpegh.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
-vendor.audio_hal.in_period_size=144
-vendor.audio_hal.period_multiplier=3
-vendor.audio_hal.period_size=192
-vendor.voice.path.for.pcm.voip=true
+vendor.qc2audio.suspend.enabled=true
+vendor.qc2audio.per_frame.flac.dec.enabled=true
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
@@ -83,24 +63,34 @@ persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
 ro.bluetooth.a2dp_offload.supported=true
 
 # Chipset
-ro.soc.manufacturer=Qualcomm
-
-# Crypto
-ro.crypto.dm_default_key.options_format.version=2
-ro.crypto.volume.metadata.method=dm-default-key
+ro.soc.manufacturer=QTI
 
 # DPM
-persist.vendor.dpm.idletimer.mode=default
-persist.vendor.dpmhalservice.enable=1
+persist.vendor.dpm.vndr.idletimer.mode=default
+persist.vendor.dpm.vndr.halservice.enable=1
+persist.vendor.dpm.vndr.feature=11
 
 # Display
+persist.sys.sf.color_mode=0
+persist.sys.sf.color_saturation=1.0
 vendor.display.comp_mask=0
+vendor.display.disable_3d_adaptive_tm=1
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
+vendor.display.disable_scaler=0
+vendor.display.disable_sdr_dimming=1
+vendor.display.disable_sdr_histogram=1
+vendor.display.disable_stc_dimming=1
 vendor.display.enable_async_powermode=0
-vendor.display.enable_optimize_refresh=1
+vendor.display.enable_async_vds_creation=1
+vendor.display.enable_dpps_dynamic_fps=1
+vendor.display.enable_early_wakeup=1
+vendor.display.enable_hdr10_gpu_target=1
+vendor.display.enable_optimize_refresh=0
+vendor.display.use_smooth_motion=1
+vendor.display.vds_allow_hwc=1
 
 # DRM
 drm.service.enabled=true
@@ -108,17 +98,25 @@ drm.service.enabled=true
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# Fuse
+persist.sys.fuse.passthrough.enable=true
+
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
 debug.sf.disable_client_composition_cache=1
+debug.sf.early.app.duration=13666666
+debug.sf.early.sf.duration=10500000
+debug.sf.earlyGl.app.duration=13666666
+debug.sf.earlyGl.sf.duration=10500000
+debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_gl_backpressure=1
-debug.sf.high_fps_early_gl_phase_offset_ns=-2000000
-debug.sf.high_fps_early_phase_offset_ns=-4000000
-debug.sf.high_fps_late_app_phase_offset_ns=1000000
-debug.sf.high_fps_late_sf_phase_offset_ns=-2000000
+debug.sf.predict_hwc_composition_strategy=0
 debug.sf.latch_unsignaled=1
+debug.sf.late.app.duration=13666666
+debug.sf.late.sf.duration=10500000
+debug.sf.use_phase_offsets_as_durations=1
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
@@ -136,30 +134,29 @@ ro.surface_flinger.wcg_composition_dataspace=143261696
 ro.incremental.enable=yes
 
 # Media
+debug.c2.use_dmabufheaps=1
+debug.stagefright.c2inputsurface=-1
 debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
 
 # Netflix
-ro.netflix.bsp_rev=Q875-32408-1
+ro.netflix.bsp_rev=Q8550-36432-1
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
-# QTEE
-persist.vendor.qteeconnector.retrying_interval=30
-persist.vendor.qteeconnector.retrying_timeout=2000
-
 # Radio
 persist.radio.multisim.config=dsds
+persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.enableadvancedscan=true
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
+persist.vendor.radio.sib16_support=1
 ro.telephony.default_network=33,33
 
-# Sensors
-persist.vendor.sensors.allow_non_default_discovery=true
-persist.vendor.sensors.on_change_sample_period=true
-persist.vendor.sensors.sync_request=true
+# RCS
+persist.vendor.rcs.singlereg.feature=1
 
 # USB
 sys.usb.mtp.batchcancel=1
