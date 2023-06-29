@@ -1,20 +1,17 @@
 #
-# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2022-2023 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-on property:ro.boot.rf_version=11
+on property:ro.boot.hw_region_id=21 && property:ro.boot.prjname=22811
     setprop ro.boot.hardware.revision "CN"
 
-on property:ro.boot.rf_version=12
-    setprop ro.boot.hardware.revision "TMO"
-
-on property:ro.boot.rf_version=13
+on property:ro.boot.hw_region_id=21 && property:ro.boot.prjname=22861
     setprop ro.boot.hardware.revision "IN"
 
-on property:ro.boot.rf_version=21
+on property:ro.boot.hw_region_id=22
     setprop ro.boot.hardware.revision "EU"
 
-on property:ro.boot.rf_version=22
+on property:ro.boot.hw_region_id=23
     setprop ro.boot.hardware.revision "NA"
