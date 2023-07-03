@@ -48,6 +48,12 @@ on property:ro.boot.prjname=*
     # Display
     setprop ro.separate.soft ${ro.boot.prjname}
 
+on property:ro.boot.prjname=22811
+    setprop persist.vendor.display.pxlw.iris_feature 0x407f0780
+
+on property:ro.boot.prjname=22861
+    setprop persist.vendor.display.pxlw.iris_feature 0x400080
+
 on property:sys.boot_completed=1
     # Display
     copy /vendor/etc/Oplus_QC_LTM_SM8550_2022_10_13.pfm /mnt/vendor/persist/data/pfm/licenses/Oplus_QC_LTM_SM8550_2022_10_13.pfm
