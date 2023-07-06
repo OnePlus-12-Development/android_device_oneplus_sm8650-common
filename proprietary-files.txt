@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OnePlus 11 (CPH2449_11.A.10).
+## are from OnePlus 11 (CPH2449_11.A.23).
 
 # ACDBs
 vendor/etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb
@@ -122,7 +122,7 @@ vendor/lib/rfsa/adsp/bm3a73v08s11n44.bin
 vendor/lib/rfsa/adsp/bm3a73v08s11n45.bin
 vendor/lib/rfsa/adsp/bm3a73v08s11n50.bin
 vendor/lib/rfsa/adsp/bm3a73v08s11n51.bin
-vendor/lib/rfsa/adsp/libDspIOProxy_skel.so
+vendor/lib/rfsa/adsp/chre_qsh_shim.so
 vendor/lib/rfsa/adsp/libQ6MSFR_manager_skel.so
 vendor/lib/rfsa/adsp/libQnnHtpV73Skel.so
 vendor/lib/rfsa/adsp/libVppAisQnnHtp.so
@@ -132,25 +132,20 @@ vendor/lib/rfsa/adsp/libapn_dsp_skel.so
 vendor/lib/rfsa/adsp/libbitml_nsp_skel.so
 vendor/lib/rfsa/adsp/libbitml_nsp_v2_skel.so
 vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
-vendor/lib/rfsa/adsp/libdsp_streamer_qvrcam_receiver.so
 vendor/lib/rfsa/adsp/libevadsp_3_0.so
-vendor/lib/rfsa/adsp/libeye_tracking_dsp_sample_skel.so
-vendor/lib/rfsa/adsp/libhalide_hexagon_remote_skel.so
 vendor/lib/rfsa/adsp/libhdr_skel.so
 vendor/lib/rfsa/adsp/libmctfengine_skel.so
 vendor/lib/rfsa/adsp/libmobilenet_dsp_frc.so
 vendor/lib/rfsa/adsp/libmobilenet_dsp_frc_networks.so
 vendor/lib/rfsa/adsp/libosie_skel.so
-vendor/lib/rfsa/adsp/libqvr_3dof_tracker_skel.so
-vendor/lib/rfsa/adsp/libqvr_cam_dsp_driver_skel.so
-vendor/lib/rfsa/adsp/libqvr_dsp_driver_skel.so
-vendor/lib/rfsa/adsp/libtracker_6dof_skel_8450.so
 vendor/lib/rfsa/adsp/libvpp_ais.so
 vendor/lib/rfsa/adsp/libvpp_ais_networks.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/libvpp_vqa_networks.so
 vendor/lib/rfsa/adsp/libvpt_action_recognition.so
+vendor/lib/rfsa/adsp/nearby.napp_header
+vendor/lib/rfsa/adsp/nearby.so
 
 # ANT+
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
@@ -290,6 +285,7 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Camera
+odm/bin/hw/vendor.oplus.hardware.cammidasservice-V1-service
 odm/bin/occe_create
 odm/etc/camera/AiFace.json
 odm/etc/camera/M_FaceAttribute_RGB_age_gender_1.7.1.model.hardcode
@@ -481,6 +477,7 @@ odm/etc/camera/filters_lut/BeautyplusMellow-5.CUBE.rgb.bin
 odm/etc/camera/filters_lut/ByW7g4bbf
 odm/etc/camera/filters_lut/ByYo3If
 odm/etc/camera/filters_lut/BycYf7WWz
+odm/etc/camera/filters_lut/Cold.cube.rgb.bin
 odm/etc/camera/filters_lut/DL_D_G4.cube.rgb.bin
 odm/etc/camera/filters_lut/DL_L_B6.cube.rgb.bin
 odm/etc/camera/filters_lut/Delta400.3dl.rgb.bin
@@ -503,11 +500,13 @@ odm/etc/camera/filters_lut/SnapseedBright.cube.rgb.bin
 odm/etc/camera/filters_lut/SweetSnapAlice-3.CUBE.rgb.bin
 odm/etc/camera/filters_lut/Sy4uLSTgf
 odm/etc/camera/filters_lut/Syt2KeZZf
+odm/etc/camera/filters_lut/Texture-70.cube.rgb.bin
 odm/etc/camera/filters_lut/V01-landscape-2.6.CUBE.rgb.bin
 odm/etc/camera/filters_lut/V02-portrait-2.5.CUBE.rgb.bin
 odm/etc/camera/filters_lut/V03-food-2.0.CUBE.rgb.bin
 odm/etc/camera/filters_lut/V04-night-1.3.CUBE.rgb.bin
 odm/etc/camera/filters_lut/V05-mono-3.3.CUBE.rgb.bin
+odm/etc/camera/filters_lut/White.cube.rgb.bin
 odm/etc/camera/filters_lut/YoucamAdorable80.cube.rgb.bin
 odm/etc/camera/filters_lut/b-w-P8.CUBE.rgb.bin
 odm/etc/camera/filters_lut/black_gold.bin
@@ -516,6 +515,7 @@ odm/etc/camera/filters_lut/bowu-2.1.cube.rgb.bin
 odm/etc/camera/filters_lut/bright_coloured.bin
 odm/etc/camera/filters_lut/calm-V5.CUBE.rgb.bin
 odm/etc/camera/filters_lut/candy-P7.CUBE.rgb.bin
+odm/etc/camera/filters_lut/cola.bin
 odm/etc/camera/filters_lut/cyberpunk-kitsch-3.1.CUBE.rgb.bin
 odm/etc/camera/filters_lut/cyberpunk-neoMilitarism-2.4-final.CUBE.rgb.bin
 odm/etc/camera/filters_lut/default
@@ -959,7 +959,9 @@ odm/etc/camera/wide.bin
 odm/etc/init/init.camera_upate.rc
 odm/etc/init/init.odm.camera.provider.override.rc
 odm/etc/init/occe_create.rc
+odm/etc/init/vendor.oplus.hardware.cammidasservice-V1-service.rc
 odm/etc/vintf/manifest/manifest_oplus_cameraextension.xml
+odm/etc/vintf/manifest/manifest_oplus_cammidasservice_aidl.xml
 odm/lib/vendor.oplus.hardware.extcamera@1.0.so
 odm/lib64/camera/com.qti.sensor.imx581.so
 odm/lib64/camera/com.qti.sensor.imx709.so
@@ -988,10 +990,10 @@ odm/lib64/camera/fdconfigpreview.bin
 odm/lib64/camera/fdconfigpreviewlite.bin
 odm/lib64/camera/fdconfigvideo.bin
 odm/lib64/camera/fdconfigvideolite.bin
-odm/lib64/camera/libaecCustomParam_front_main.bin
-odm/lib64/camera/libaecCustomParam_main.bin
-odm/lib64/camera/libaecCustomParam_tele.bin
-odm/lib64/camera/libaecCustomParam_wide.bin
+odm/lib64/camera/libaecCustomParam_Cam0.bin
+odm/lib64/camera/libaecCustomParam_Cam1.bin
+odm/lib64/camera/libaecCustomParam_Cam2.bin
+odm/lib64/camera/libaecCustomParam_Cam3.bin
 odm/lib64/camera/libafCustomParamFrontMain.bin
 odm/lib64/camera/libafCustomParamMain.bin
 odm/lib64/camera/libafCustomParamTele.bin
@@ -1034,6 +1036,7 @@ odm/lib64/libFaceBeautyPre.so
 odm/lib64/libFaceDistortionCorrection.so
 odm/lib64/libFilterWrapper.so
 odm/lib64/libHIS.so
+odm/lib64/libImageWarpMask.so
 odm/lib64/libOGLManager.so
 odm/lib64/libOPAlgoCamAIBeautyBodyDetection.so
 odm/lib64/libOPAlgoCamAiBeautyEyeRetouchCn.so
@@ -1161,7 +1164,7 @@ odm/lib64/libwatermark_photo.so
 odm/lib64/libwrapper_te.so
 odm/lib64/libyuv2.so
 odm/lib64/vendor.oplus.hardware.cameraextension@1.0-service-impl.so
-odm/lib64/vendor.oplus.hardware.cammidasservice@1.0.so
+odm/lib64/vendor.oplus.hardware.cammidasservice-V1-ndk.so
 odm/lib64/vendor.oplus.hardware.orms@1.0.so
 odm/lib64/vendor.oplus.hardware.sendextcamcmd-V1-ndk.so
 odm/lib64/vendor.oplus.hardware.sendextcamcmd-V1-service-impl.so
@@ -1264,7 +1267,6 @@ vendor/lib64/com.qti.feature2.hdr.so
 vendor/lib64/com.qti.feature2.mcreprocrt.so
 vendor/lib64/com.qti.feature2.memcpy.so
 vendor/lib64/com.qti.feature2.mfsr.so
-vendor/lib64/com.qti.feature2.ml.so
 vendor/lib64/com.qti.feature2.mux.so
 vendor/lib64/com.qti.feature2.qcfa.so
 vendor/lib64/com.qti.feature2.rawhdr.so
@@ -1272,8 +1274,6 @@ vendor/lib64/com.qti.feature2.realtimeserializer.so
 vendor/lib64/com.qti.feature2.rt.so
 vendor/lib64/com.qti.feature2.rtmcx.so
 vendor/lib64/com.qti.feature2.serializer.so
-vendor/lib64/com.qti.feature2.statsregeneration.so
-vendor/lib64/com.qti.feature2.stub.so
 vendor/lib64/com.qti.feature2.swmf.so
 vendor/lib64/com.qti.qseeaon.so
 vendor/lib64/com.qti.qseeutils.so
@@ -1325,7 +1325,7 @@ vendor/lib64/libjpege.so
 vendor/lib64/libmctfengine_stub.so
 vendor/lib64/libmfGhostDetection.so
 vendor/lib64/libmfec.so
-vendor/lib64/libmidasserviceintf.so
+vendor/lib64/libmidasserviceintf_aidl.so
 vendor/lib64/libmmcamera_bestats.so
 vendor/lib64/libmmcamera_cac3.so
 vendor/lib64/libmmcamera_lscv35.so
@@ -1350,7 +1350,8 @@ vendor/lib64/libthreadutils.so
 vendor/lib64/libubifocus.so
 vendor/lib64/libvideoml.so
 vendor/lib64/vendor.oplus.hardware.cameraextension@1.0.so
-vendor/lib64/vendor.oplus.hardware.cammidasservice@1.0.so
+vendor/lib64/vendor.oplus.hardware.cammidasservice-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.commondcs-V1-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.sendextcamcmd-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.camera.aon-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
@@ -1496,6 +1497,14 @@ vendor/bin/ssgtzd
 vendor/etc/init/qwesd.rc
 vendor/etc/init/ssgtzd.rc
 vendor/etc/seccomp_policy/qwesd@2.0.policy
+
+# Context Hub
+odm/etc/permissions/android.hardware.context_hub.xml
+vendor/bin/hw/android.hardware.contexthub-service.qmi
+vendor/etc/chre/preloaded_nanoapps.json
+vendor/etc/init/android.hardware.contexthub-service.qmi.rc
+vendor/etc/vintf/manifest/android.hardware.contexthub-service.qmi.xml
+vendor/lib64/android.hardware.contexthub-V1-ndk.so
 
 # Data
 vendor/bin/ATFWD-daemon
@@ -1759,9 +1768,9 @@ odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc
 odm/etc/vintf/manifest/manifest_oplus_fingerprint.xml
 odm/lib64/libolc_vnd.so
 odm/lib64/vendor.oplus.hardware.biometrics.fingerprint@2.1.so
-odm/lib64/vendor.oplus.hardware.commondcs@1.0.so
-odm/lib64/vendor.oplus.hardware.olc@2.0.so
-odm/lib64/vendor.oplus.hardware.touch@1.0.so
+odm/lib64/vendor.oplus.hardware.commondcs-V1-ndk.so
+odm/lib64/vendor.oplus.hardware.olc2-V1-ndk.so
+odm/lib64/vendor.oplus.hardware.touch-V1-ndk.so
 
 # Fingerprint firmware
 odm/vendor/firmware/uff_gx.b00
@@ -2202,14 +2211,16 @@ odm/etc/nfc/libnfc-nci.conf_22861:vendor/etc/libnfc-nci.conf
 odm/lib/libsn100u_fw.so:vendor/lib/libsn100u_fw.so
 
 # OSENSE
-odm/lib64/libosensehalclient.so
-odm/lib64/vendor.oplus.hardware.osense.client@1.0.so
+odm/lib64/libosenseaidlhalclient.so
+odm/lib64/vendor.oplus.hardware.osense.client-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.osense.client-V1-ndk.so
 
 # OPLUS Performance
-odm/bin/hw/vendor.oplus.hardware.performance@1.0-service
-odm/etc/init/vendor.oplus.hardware.performance@1.0-service.rc
-odm/etc/vintf/manifest/manifest_oplus_performance.xml
-odm/lib64/vendor.oplus.hardware.performance@1.0.so
+odm/bin/hw/vendor-oplus-hardware-performance-V1-service
+odm/etc/init/vendor-oplus-hardware-performance-V1-service.rc
+odm/etc/vintf/manifest/manifest_performance_aidl.xml
+odm/lib64/vendor.oplus.hardware.performance-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.performance-V1-ndk.so
 
 # PD
 vendor/bin/pd-mapper
@@ -2396,7 +2407,14 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml
 vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 
 # RIL
-odm/lib64/vendor.oplus.hardware.appradio@1.0.so
+odm/etc/vintf/manifest/device_manifest_communication_center_aidl.xml
+odm/lib64/lib-virtual-modem-protos.so
+odm/lib64/libcommcenterfw.so
+odm/lib64/libcommcenterutils.so
+odm/lib64/libdmtp-protos-lite.so
+odm/lib64/libdmtp.so
+odm/lib64/libdmtpclient.so
+odm/lib64/vendor.oplus.hardware.communicationcenter-V1-ndk.so
 odm/lib64/vendor.oplus.hardware.ims@1.0.so
 odm/lib64/vendor.oplus.hardware.radio@1.0.so
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
@@ -2495,6 +2513,21 @@ vendor/lib64/qcrild_libqcrilnrutils.so
 vendor/lib64/qtiPeripheralMgr.so
 vendor/lib64/qtiril-utils.so
 vendor/lib64/qtiwakelock.so
+vendor/lib64/vendor.oplus.hardware.appradioaidl-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.communicationcenter-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.assist-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.atci-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.cap-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.data-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.em-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.messaging-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.modem-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.network-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.rsu-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.se-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.sim-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.smartratswitch-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.radioex.voice-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.data.connection@1.0.so
 vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
 vendor/lib64/vendor.qti.hardware.data.connectionfactory-V1-ndk.so
@@ -2619,6 +2652,7 @@ vendor/lib64/sensors.ssc.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Sensors config
+vendor/etc/sensors/config/chre_dynamic_sensors.json
 vendor/etc/sensors/config/kailua_bu52053nvx_0.json
 vendor/etc/sensors/config/kailua_default_sensors.json
 vendor/etc/sensors/config/kailua_dynamic_sensors.json
