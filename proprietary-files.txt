@@ -1757,6 +1757,9 @@ vendor/firmware/evass.b19
 vendor/firmware/evass.mbn
 vendor/firmware/evass.mdt
 
+# eUICC - from FP4 SKQ1.220201.001 SP29
+product/priv-app/EuiccGoogle/EuiccGoogle.apk|2d238bfe14473b8f578bf0d4ea61246f61d0f618;PRESIGNED
+
 # FASTCV
 vendor/lib64/libfastcvdsp_stub.so
 -vendor/lib64/libfastcvopt.so
