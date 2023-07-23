@@ -78,7 +78,7 @@ BOARD_RAMDISK_USE_LZ4 := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 # DTBO
-BOARD_KERNEL_SEPARATED_DTBO := true
+#BOARD_KERNEL_SEPARATED_DTBO := true
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
@@ -125,12 +125,10 @@ BOARD_KERNEL_IMAGE_NAME := Image
 
 KERNEL_LTO := none
 
-TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8550
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
-    vendor/kalama_GKI.config \
-    vendor/ext_config/lineage_kalama.config
+    vendor/kalama_GKI.config
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(COMMON_PATH)/modules.blocklist
@@ -138,7 +136,7 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.l
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE)
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.vendor_boot))
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
-#BOOT_KERNEL_MODULES := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery $(COMMON_PATH)/modules.include.vendor_ramdisk))
+BOOT_KERNEL_MODULES := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery $(COMMON_PATH)/modules.include.vendor_ramdisk))
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/oplus_chg/battery/mmi_charging_enable
