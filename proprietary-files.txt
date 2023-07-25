@@ -2868,9 +2868,8 @@ vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # WiFi Display
 system/framework/WfdCommon.jar
-system_ext/bin/wfdservice
+system_ext/bin/wfdservice64
 system_ext/etc/init/wfdservice.rc
-system_ext/etc/seccomp_policy/wfdservice.policy
 system_ext/etc/seccomp_policy/wfdservice64.policy
 system_ext/etc/wfdconfigsink.xml
 system_ext/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
