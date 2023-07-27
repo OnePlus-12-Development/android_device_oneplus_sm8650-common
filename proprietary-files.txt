@@ -2859,9 +2859,9 @@ vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml
 vendor/lib64/libwvaidl.so
 
 # WiFi
+odm/vendor/etc/wifi/WCNSS_qcom_cfg.ini
 vendor/bin/cnss-daemon
 vendor/etc/wifi/icm.conf
-vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/vendor_cmd.xml
 vendor/etc/wifi/wpa_supplicant_overlay.conf
