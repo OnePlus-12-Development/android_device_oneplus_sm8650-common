@@ -150,6 +150,20 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.sendextcamcmd</name>
+        <interface>
+            <name>ISendExtCamCmdService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.stability.oplus_project</name>
+        <interface>
+            <name>IOplusProject</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
         <name>vendor.pixelworks.hardware.display</name>
         <interface>
             <name>IIris</name>
