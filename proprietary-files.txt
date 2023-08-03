@@ -1917,11 +1917,6 @@ vendor/lib64/libxtwifi_server_protocol_uri_v3.so
 vendor/lib64/vendor.qti.gnss-V2-ndk.so
 vendor/lib64/vendor.qti.gnss-service.so
 
-# Health
-vendor/bin/hw/android.hardware.health-service.qti
-vendor/etc/init/android.hardware.health-service.qti.rc
-vendor/etc/vintf/manifest/android.hardware.health-service.qti.xml
-
 # Hotword Enrollment
 my_product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml:product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml
 my_product/framework/com.android.hotwordenrollment.common.util.jar:product/framework/com.android.hotwordenrollment.common.util.jar
