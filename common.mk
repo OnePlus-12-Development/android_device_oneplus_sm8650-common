@@ -232,6 +232,8 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     IPACM_Filter_cfg.xml
 
+USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.default \
