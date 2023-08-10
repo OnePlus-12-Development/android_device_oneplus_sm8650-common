@@ -1645,8 +1645,12 @@ vendor/lib64/libvmfilexfer.so
 # Display calibration data
 vendor/etc/display/qdcm_calib_data_samsung_AMB670YF07_CS_dsc_cmd_mode_panel.json
 vendor/etc/display/qdcm_calib_data_samsung_AMB670YF07_FS_dsc_cmd_mode_panel.json
+vendor/etc/display/qdcm_calib_data_samsung_AMB670YF08_CS_dsc_cmd_mode_panel.json
+vendor/etc/display/qdcm_calib_data_samsung_AMB670YF08_FS_dsc_cmd_mode_panel.json
 vendor/etc/ltm_config_samsung_AMB670YF07_CS_dsc_cmd_mode_panel.xml
 vendor/etc/ltm_config_samsung_AMB670YF07_FS_dsc_cmd_mode_panel.xml
+vendor/etc/ltm_config_samsung_AMB670YF08_CS_dsc_cmd_mode_panel.xml
+vendor/etc/ltm_config_samsung_AMB670YF08_FS_dsc_cmd_mode_panel.xml
 
 # Display postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service
