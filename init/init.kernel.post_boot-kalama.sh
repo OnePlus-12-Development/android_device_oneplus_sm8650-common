@@ -80,8 +80,8 @@ echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
 # Setting b.L scheduler parameters
 echo 95 95 > /proc/sys/walt/sched_upmigrate
 echo 85 85 > /proc/sys/walt/sched_downmigrate
-echo 400 > /proc/sys/walt/sched_group_upmigrate
-echo 380 > /proc/sys/walt/sched_group_downmigrate
+echo 100 > /proc/sys/walt/sched_group_upmigrate
+echo 85 > /proc/sys/walt/sched_group_downmigrate
 echo 1 > /proc/sys/walt/sched_walt_rotate_big_tasks
 echo 400000000 > /proc/sys/walt/sched_coloc_downmigrate_ns
 echo 16000000 16000000 16000000 16000000 16000000 16000000 16000000 5000000 > /proc/sys/walt/sched_coloc_busy_hyst_cpu_ns
@@ -93,7 +93,6 @@ echo 1 1 1 1 1 1 1 15 > /proc/sys/walt/sched_util_busy_hyst_cpu_util
 echo 40 > /proc/sys/walt/sched_cluster_util_thres_pct
 echo 30 > /proc/sys/walt/sched_idle_enough
 echo 10 > /proc/sys/walt/sched_ed_boost
-echo 1000 > /proc/sys/walt/sched_min_task_util_for_colocation
 
 #Set early upmigrate tunables
 freq_to_migrate=1228800
@@ -123,17 +122,14 @@ echo 0 > /proc/sys/walt/sched_boost
 # Reset the RT boost, which is 1024 (max) by default.
 echo 0 > /proc/sys/kernel/sched_util_clamp_min_rt_default
 
-# Limit kswapd in cpu0-6
-echo `ps -elf | grep -v grep | grep kswapd0 | awk '{print $2}'` > /dev/cpuset/kswapd-like/tasks
-
 # configure governor settings for silver cluster
-echo "uag" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+echo "walt" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
 echo 0 > /sys/devices/system/cpu/cpufreq/policy0/walt/down_rate_limit_us
 echo 0 > /sys/devices/system/cpu/cpufreq/policy0/walt/up_rate_limit_us
 if [ $rev == "1.0" ] || [ $rev == "1.1" ]; then
-	echo 1324800 > /sys/devices/system/cpu/cpufreq/policy0/uag/hispeed_freq
+	echo 1324800 > /sys/devices/system/cpu/cpufreq/policy0/walt/hispeed_freq
 else
-	echo 1267200 > /sys/devices/system/cpu/cpufreq/policy0/uag/hispeed_freq
+	echo 1267200 > /sys/devices/system/cpu/cpufreq/policy0/walt/hispeed_freq
 fi
 echo 556800 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
 echo 1 > /sys/devices/system/cpu/cpufreq/policy0/walt/pl
@@ -147,32 +143,28 @@ fi
 echo 100 > /proc/sys/walt/input_boost/input_boost_ms
 
 # configure governor settings for gold cluster
-echo "uag" > /sys/devices/system/cpu/cpufreq/policy3/scaling_governor
+echo "walt" > /sys/devices/system/cpu/cpufreq/policy3/scaling_governor
 echo 0 > /sys/devices/system/cpu/cpufreq/policy3/walt/down_rate_limit_us
 echo 0 > /sys/devices/system/cpu/cpufreq/policy3/walt/up_rate_limit_us
 if [ $rev == "1.0" ] || [ $rev == "1.1" ]; then
-	echo 1555200 > /sys/devices/system/cpu/cpufreq/policy3/uag/hispeed_freq
+	echo 1555200 > /sys/devices/system/cpu/cpufreq/policy3/walt/hispeed_freq
 else
-	echo 1555200 > /sys/devices/system/cpu/cpufreq/policy3/uag/hispeed_freq
+	echo 1555200 > /sys/devices/system/cpu/cpufreq/policy3/walt/hispeed_freq
 fi
 echo 537600 > /sys/devices/system/cpu/cpufreq/policy3/scaling_min_freq
 echo 1 > /sys/devices/system/cpu/cpufreq/policy3/walt/pl
-#target_loads
-echo "80 2188800:95" > /sys/devices/system/cpu/cpufreq/policy3/uag/target_loads
 
 # configure governor settings for gold+ cluster
-echo "uag" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
+echo "walt" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
 echo 0 > /sys/devices/system/cpu/cpufreq/policy7/walt/down_rate_limit_us
 echo 0 > /sys/devices/system/cpu/cpufreq/policy7/walt/up_rate_limit_us
 if [ $rev == "1.0" ] || [ $rev == "1.1" ]; then
-	echo 1593600 > /sys/devices/system/cpu/cpufreq/policy7/uag/hispeed_freq
+	echo 1593600 > /sys/devices/system/cpu/cpufreq/policy7/walt/hispeed_freq
 else
-	echo 1728000 > /sys/devices/system/cpu/cpufreq/policy7/uag/hispeed_freq
+	echo 1728000 > /sys/devices/system/cpu/cpufreq/policy7/walt/hispeed_freq
 fi
 echo 748800 > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq
 echo 1 > /sys/devices/system/cpu/cpufreq/policy7/walt/pl
-#target_loads
-echo "80 2342400:95" > /sys/devices/system/cpu/cpufreq/policy7/uag/target_loads
 
 # configure bus-dcvs
 bus_dcvs="/sys/devices/system/cpu/bus_dcvs"
@@ -278,20 +270,5 @@ case "$console_config" in
 		echo "Enable console config to $console_config"
 	;;
 esac
-chown -h system.system /sys/devices/system/cpu/cpufreq/policy0/walt/target_loads
-chown -h system.system /sys/devices/system/cpu/cpufreq/policy3/walt/target_loads
-chown -h system.system /sys/devices/system/cpu/cpufreq/policy7/walt/target_loads
 
-#oplus_kernel_cpu
-# config cpufreq_bouncing parameters for gold cluster
-echo "1,1,17,30,2,50,1,50"  > /sys/module/cpufreq_bouncing/parameters/config
-# config cpufreq_bouncing parameters for gold+ cluster
-echo "2,1,15,30,2,50,1,50"  > /sys/module/cpufreq_bouncing/parameters/config
-#config power effiecny tunning parameters
-echo 1 > /sys/module/cpufreq_effiency/parameters/affect_mode
-echo "307200,45000,1344000,52000,0"  > /sys/module/cpufreq_effiency/parameters/cluster0_effiency
-echo "499200,50000,2054400,55000,0"  > /sys/module/cpufreq_effiency/parameters/cluster1_effiency
-echo "595200,55000,1977600,60000,0"  > /sys/module/cpufreq_effiency/parameters/cluster2_effiency
-#uclamp for top-app
-echo 12 > /dev/cpuctl/top-app/cpu.uclamp.min
 setprop vendor.post_boot.parsed 1

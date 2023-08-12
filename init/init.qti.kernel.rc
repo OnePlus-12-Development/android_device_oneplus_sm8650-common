@@ -115,22 +115,9 @@ on boot
     # Allow access to memory hotplug device attributes
     chown system system /sys/kernel/mem-offline/anon_migrate
 
-    #ifdef CONFIG_OPLUS_OMRG
-    write /dev/cpuset/display/cpus 3-7
-    #endif
-
 on post-fs-data
     # Create directory used for dump collection
     mkdir /data/vendor/ssrdump 0770 root system
-
-#ifdef OPLUS_FEATURE_CPUFREQ_BOUNCING
-    chown system system /sys/module/cpufreq_bouncing/parameters/enable
-    chown system system /sys/module/cpufreq_bouncing/parameters/config
-#endif
-
-#ifdef CONFIG_OPLUS_OMRG
-    chown system system /sys/devices/platform/soc/soc:oplus-omrg/oplus-omrg0/ruler_enable
-#endif
 
 on property:persist.sys.ssr.enable_debug=*
     write /sys/module/subsys_pil_tz/parameters/enable_debug ${persist.sys.ssr.enable_debug}
