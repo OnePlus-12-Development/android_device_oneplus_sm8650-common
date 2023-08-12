@@ -237,6 +237,8 @@ PRODUCT_PACKAGES += \
     fstab.default \
     fstab.default.vendor_ramdisk \
     init.class_main.sh \
+    init.kernel.post_boot.sh \
+    init.kernel.post_boot-kalama.sh \
     init.oplus.hw.rc \
     init.oplus.hw.rc.recovery \
     init.oplus.rc \
@@ -246,6 +248,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
+    init.qti.kernel.rc \
     init.target.rc \
     ueventd.oplus.rc \
     ueventd.qcom.rc
