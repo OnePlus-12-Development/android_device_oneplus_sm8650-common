@@ -109,7 +109,6 @@ phoenix_reboot_speed.ko
 shutdown_speed.ko
 cpufreq_health.ko
 horae_shell_temp.ko
-horae_shell_temp.ko
 oplus_bsp_sched_assist.ko
 oplus_bsp_frame_boost.ko
 cpu_jankinfo.ko
