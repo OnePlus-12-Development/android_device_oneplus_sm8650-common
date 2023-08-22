@@ -39,7 +39,6 @@ gunyah.ko
 mdt_loader.ko
 hwkm.ko
 icc-bcm-voter.ko
-icc-debug.ko
 iommu-logger.ko
 llcc-qcom.ko
 mem-hooks.ko

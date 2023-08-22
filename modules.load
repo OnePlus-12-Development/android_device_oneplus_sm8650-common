@@ -47,7 +47,6 @@ core_hang_detect.ko
 usb_bam.ko
 memlat.ko
 memlat_scmi.ko
-rimps_log.ko
 qcom_ramdump.ko
 panel_event_notifier.ko
 dmesg_dumper.ko
@@ -95,7 +94,6 @@ qseecom_proxy.ko
 oplus_nfc.ko
 sg.ko
 spi-msm-geni.ko
-spmi-pmic-arb-debug.ko
 msm_sharedmem.ko
 phy-generic.ko
 phy-qcom-emu.ko
@@ -147,7 +145,6 @@ qti_userspace_cdev.ko
 sdpm_clk.ko
 thermal_minidump.ko
 qcom_edac.ko
-qcom-cpufreq-hw-debug.ko
 qcom_lpm.ko
 leds-qti-flash.ko
 leds-qti-tri-led.ko
@@ -169,22 +166,8 @@ gh_mem_notifier.ko
 qcom-spmi-adc5-gen3.ko
 qcom-vadc-common.ko
 nvmem_qfprom.ko
-icc-test.ko
 slimbus.ko
 slim-qcom-ngd-ctrl.ko
-coresight.ko
-coresight-tmc.ko
-coresight-funnel.ko
-coresight-replicator.ko
-coresight-stm.ko
-coresight-cti.ko
-coresight-tpda.ko
-coresight-tpdm.ko
-coresight-csr.ko
-coresight-dummy.ko
-coresight-remote-etm.ko
-coresight-tgu.ko
-coresight-hwevent.ko
 stm_core.ko
 stm_p_basic.ko
 stm_p_ost.ko
@@ -197,7 +180,6 @@ mac80211.ko
 qrtr-smd.ko
 qrtr-mhi.ko
 qrtr-gunyah.ko
-kunit.ko
 q6_notifier_dlkm.ko
 spf_core_dlkm.ko
 audpkt_ion_dlkm.ko
@@ -271,7 +253,6 @@ msm_ext_display.ko
 sync_fence.ko
 msm_hw_fence.ko
 msm-mmrm.ko
-mmrm_test_module.ko
 nxp-nci.ko
 msm_video.ko
 msm_kgsl.ko
