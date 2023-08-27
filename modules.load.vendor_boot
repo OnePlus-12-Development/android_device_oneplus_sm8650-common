@@ -50,7 +50,6 @@ minidump.ko
 msm_dma_iommu_mapping.ko
 pinctrl-kalama.ko
 qnoc-kalama.ko
-ns.ko
 nvmem_qcom-spmi-sdam.ko
 phy-qcom-ufs.ko
 phy-qcom-ufs-qmp-v4-kalama.ko
