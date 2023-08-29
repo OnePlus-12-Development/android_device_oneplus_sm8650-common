@@ -2830,7 +2830,6 @@ vendor/firmware/vpu33_4v.mbn
 vendor/firmware/vpu33_4v_unsigned.mbn
 
 # Widevine DRM
-odm/lib64/liboemcrypto.so
 vendor/bin/hw/android.hardware.drm-service.widevine
 vendor/etc/init/android.hardware.drm-service.widevine.rc
 vendor/etc/oplus_Widevine_licenses.pfm
