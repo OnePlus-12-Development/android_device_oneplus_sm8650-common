@@ -219,7 +219,6 @@ qcedev-mod_dlkm.ko
 qcrypto-msm_dlkm.ko
 qce50_dlkm.ko
 hdcp_qseecom_dlkm.ko
-qrng_dlkm.ko
 smcinvoke_dlkm.ko
 qca_cld3_kiwi_v2.ko
 cnss2.ko

@@ -106,3 +106,4 @@ oplus_mdmfeature.ko
 qpnp-power-on.ko
 nvme-core.ko
 nvme.ko
+qrng_dlkm.ko
