@@ -159,6 +159,9 @@ ro.telephony.default_network=33,33
 # RCS
 persist.vendor.rcs.singlereg.feature=1
 
+# Sensors
+persist.vendor.sensors.debug.hal=0
+
 # USB
 sys.usb.mtp.batchcancel=1
 vendor.usb.controller=a600000.dwc3
