@@ -3,26 +3,6 @@
      SPDX-License-Identifier: BSD-3-Clause
 -->
 <manifest version="2.0" type="device">
-    <hal format="hidl">
-        <name>vendor.oplus.hardware.ims</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOplusImsRadio</name>
-            <instance>oplusimsradio0</instance>
-            <instance>oplusimsradio1</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oplus.hardware.radio</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOplusRadio</name>
-            <instance>oplus_slot1</instance>
-            <instance>oplus_slot2</instance>
-        </interface>
-    </hal>
     <hal format="aidl">
         <name>vendor.oplus.hardware.appradioaidl</name>
         <version>1</version>
@@ -33,39 +13,21 @@
         </interface>
     </hal>
     <hal format="aidl">
-        <name>vendor.oplus.hardware.radioex.data</name>
+        <name>vendor.oplus.hardware.ims</name>
         <version>1</version>
-        <fqname>IOplusRadioExData/slot1</fqname>
-        <fqname>IOplusRadioExData/slot2</fqname>
+        <interface>
+            <name>IImsStable</name>
+            <instance>OplusImsRadio0</instance>
+            <instance>OplusImsRadio1</instance>
+        </interface>
     </hal>
     <hal format="aidl">
-        <name>vendor.oplus.hardware.radioex.messaging</name>
+        <name>vendor.oplus.hardware.radio</name>
         <version>1</version>
-        <fqname>IOplusRadioExMessaging/slot1</fqname>
-        <fqname>IOplusRadioExMessaging/slot2</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>vendor.oplus.hardware.radioex.modem</name>
-        <version>1</version>
-        <fqname>IOplusRadioExModem/slot1</fqname>
-        <fqname>IOplusRadioExModem/slot2</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>vendor.oplus.hardware.radioex.network</name>
-        <version>1</version>
-        <fqname>IOplusRadioExNetwork/slot1</fqname>
-        <fqname>IOplusRadioExNetwork/slot2</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>vendor.oplus.hardware.radioex.sim</name>
-        <version>1</version>
-        <fqname>IOplusRadioExSim/slot1</fqname>
-        <fqname>IOplusRadioExSim/slot2</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>vendor.oplus.hardware.radioex.voice</name>
-        <version>1</version>
-        <fqname>IOplusRadioExVoice/slot1</fqname>
-        <fqname>IOplusRadioExVoice/slot2</fqname>
+        <interface>
+            <name>IRadioStable</name>
+            <instance>OplusRadio0</instance>
+            <instance>OplusRadio1</instance>
+        </interface>
     </hal>
 </manifest>

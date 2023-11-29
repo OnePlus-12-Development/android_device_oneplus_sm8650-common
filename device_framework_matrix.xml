@@ -1,52 +1,10 @@
 <compatibility-matrix version="2.0" type="framework">
     <hal format="hidl" optional="true">
-        <name>vendor.display.PanelChaplin</name>
-        <version>1.0</version>
-        <interface>
-            <name>IPanelChaplin</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.oplus.hardware.biometrics.fingerprint</name>
-        <version>2.1</version>
-        <interface>
-            <name>IBiometricsFingerprint</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.oplus.hardware.cameraextension</name>
-        <version>1.0</version>
-        <interface>
-            <name>ICameraExtensionService</name>
-            <instance>cameraextensionservice</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.oplus.hardware.cwb</name>
         <version>1.0</version>
         <interface>
             <name>ICwbService</name>
             <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.oplus.hardware.ims</name>
-        <version>1.0</version>
-        <interface>
-            <name>IOplusImsRadio</name>
-            <instance>oplusimsradio0</instance>
-            <instance>oplusimsradio1</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.oplus.hardware.radio</name>
-        <version>1.0-1</version>
-        <interface>
-            <name>IOplusRadio</name>
-            <instance>oplus_slot1</instance>
-            <instance>oplus_slot2</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -58,12 +16,26 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
+        <name>android.hardware.biometrics.fingerprint</name>
+        <interface>
+            <name>IFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
         <name>vendor.oplus.hardware.appradioaidl</name>
         <version>1</version>
         <interface>
             <name>IAppRadioStable</name>
             <instance>OplusAppRadio0</instance>
             <instance>OplusAppRadio1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.cameraextension</name>
+        <interface>
+            <name>ICameraExtensionService</name>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="aidl" optional="true">
@@ -81,6 +53,14 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.ims</name>
+        <interface>
+            <name>IImsStable</name>
+            <instance>OplusImsRadio0</instance>
+            <instance>OplusImsRadio1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
         <name>vendor.oplus.hardware.performance</name>
         <interface>
             <name>IPerformance</name>
@@ -88,57 +68,11 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
-        <name>vendor.oplus.hardware.radioex.data</name>
-        <version>1</version>
+        <name>vendor.oplus.hardware.radio</name>
         <interface>
-            <name>IOplusRadioExData</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.oplus.hardware.radioex.messaging</name>
-        <version>1</version>
-        <interface>
-            <name>IOplusRadioExMessaging</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.oplus.hardware.radioex.modem</name>
-        <version>1</version>
-        <interface>
-            <name>IOplusRadioExModem</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.oplus.hardware.radioex.network</name>
-        <version>1</version>
-        <interface>
-            <name>IOplusRadioExNetwork</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.oplus.hardware.radioex.sim</name>
-        <version>1</version>
-        <interface>
-            <name>IOplusRadioExSim</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.oplus.hardware.radioex.voice</name>
-        <version>1</version>
-        <interface>
-            <name>IOplusRadioExVoice</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
+            <name>IRadioStable</name>
+            <instance>OplusRadio0</instance>
+            <instance>OplusRadio1</instance>
         </interface>
     </hal>
     <hal format="aidl" optional="true">
