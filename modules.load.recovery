@@ -99,6 +99,7 @@ boot_mode.ko
 oplus_phoenix.ko
 oplus_kmsg_wb.ko
 horae_shell_temp.ko
+oplus_ipa_thermal.ko
 oplus_mdmfeature.ko
 qpnp-power-on.ko
 nvme-core.ko
@@ -186,6 +187,7 @@ oplus_bsp_mxm_up.ko
 oplus_bsp_mxm_down.ko
 oplus_bsp_tri_key.ko
 oplus_bsp_rfcablemonitor.ko
+oplus_ak09970.ko
 sim_detect.ko
 oem_qmi_client.ko
 oplus_gpio.ko
@@ -229,6 +231,9 @@ synx-driver.ko
 qcom-pon.ko
 reboot-mode.ko
 oplus_chg.ko
+ufcs_class.ko
+oplus_chg_v2.ko
+oplus_chg_symbol.ko
 qcom-spmi-temp-alarm.ko
 bcl_soc.ko
 cpu_voltage_cooling.ko
