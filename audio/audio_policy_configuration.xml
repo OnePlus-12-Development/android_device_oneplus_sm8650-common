@@ -291,7 +291,13 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 96000 192000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3 AUDIO_CHANNEL_INDEX_MASK_4"/>
                 </mixPort>
+                <!-- #ifdef OPLUS_FEATURE_OCAR_AUDIO -->
+                <!-- zhangrun@MULTIMEDIA.AUDIODRIVER.HAL, 2022/09/06, add for support call record in ocar mode -->
+                <!--
                 <mixPort name="voice_rx" role="sink">
+                -->
+                <mixPort name="voice_rx" role="sink" maxOpenCount="2" maxActiveCount="2">
+                <!-- #endif OPLUS_FEATURE_OCAR_AUDIO -->
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000 16000 48000" channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
