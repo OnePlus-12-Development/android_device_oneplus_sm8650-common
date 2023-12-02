@@ -224,7 +224,6 @@ vendor/lib64/libsoc_helper.so
 vendor/lib64/vendor.qti.hardware.bttpi-V2-ndk.so
 
 # Bluetooth (A2DP)
-vendor/etc/vintf/manifest/bluetooth_audio.xml
 vendor/lib/btaudio_offload_if.so
 vendor/lib/hw/android.hardware.bluetooth.audio-impl-qti.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
