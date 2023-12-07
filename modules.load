@@ -17,7 +17,6 @@ debugcc-kalama.ko
 gpucc-kalama.ko
 bam_dma.ko
 msm_gpi.ko
-qcom_cpuss_sleep_stats.ko
 pdr_interface.ko
 qmi_helpers.ko
 heap_mem_ext_v01.ko
@@ -28,8 +27,6 @@ qsee_ipc_irq_bridge.ko
 glink_probe.ko
 glink_pkt.ko
 pmic_glink.ko
-qti_battery_debug.ko
-charger-ulog-glink.ko
 altmode-glink.ko
 soc_sleep_stats.ko
 cdsprm.ko
@@ -77,7 +74,6 @@ hvc_gunyah.ko
 msm_geni_serial.ko
 frpc-adsprpc.ko
 rdbg.ko
-qcom_iommu_debug.ko
 lt9611uxc.ko
 oplus_bsp_fw_update.ko
 oplus_bsp_ist_up.ko
@@ -102,7 +98,6 @@ phy-msm-snps-eusb2.ko
 phy-msm-m31-eusb2.ko
 dwc3-msm.ko
 ehset.ko
-f_fs_ipc_log.ko
 usb_f_cdev.ko
 usb_f_ccid.ko
 usb_f_qdss.ko
@@ -213,7 +208,6 @@ wcd938x_dlkm.ko
 wcd938x_slave_dlkm.ko
 tfa98xx-v6_dlkm.ko
 audio_extend_dlkm.ko
-stm_st54se_gpio.ko
 tz_log_dlkm.ko
 qcedev-mod_dlkm.ko
 qcrypto-msm_dlkm.ko
@@ -231,7 +225,6 @@ btpower.ko
 bt_fm_slim.ko
 radio-i2c-rtc6226-qca.ko
 camera.ko
-explorer.ko
 gsim.ko
 ipam.ko
 ipanetm.ko
