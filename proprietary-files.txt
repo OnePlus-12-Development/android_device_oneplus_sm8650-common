@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OnePlus 11 (CPH2449_14.0.0.201(EX01)).
+## are from OnePlus 11 (CPH2449_14.0.0.304(EX01)).
 
 # ACDBs
 vendor/etc/acdbdata/ffv_models/ffv__5.0.1_0.1__3.0.0_0.0__eai_2.10_enpu3.pmd
@@ -227,7 +227,7 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
-# Camera
+# Camera - from salami CPH2449_14.0.0.201(EX01)
 odm/bin/hw/vendor.oplus.hardware.cammidasservice-V1-service
 odm/bin/occe_create
 odm/etc/camera/AiFace.json
@@ -1075,7 +1075,7 @@ odm/lib64/libdualcam_optical_zoom_control.so
 odm/lib64/libdualcam_video_optical_zoom.so
 odm/lib64/libeffect_custom.so
 odm/lib64/libexif-jpeg-aps.so
-odm/lib64/libextensionlayer.so
+odm/lib64/libextensionlayer.so|01a71649ee376a28415d209ca5925acb4faab8ab
 odm/lib64/libhwconfigurationutil.so
 odm/lib64/libhyperlapse.so
 odm/lib64/libiceainr.so
