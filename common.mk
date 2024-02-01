@@ -102,9 +102,8 @@ PRODUCT_COPY_FILES += \
 
 # Boot control
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl-qti \
-    android.hardware.boot@1.2-impl-qti.recovery \
-    android.hardware.boot@1.2-service
+    android.hardware.boot-service.qti \
+    android.hardware.boot-service.qti.recovery
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -151,7 +150,9 @@ PRODUCT_PACKAGES += \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.color-service \
     vendor.qti.hardware.display.composer-service \
+    vendor.qti.hardware.display.composer3-V1-ndk \
     vendor.qti.hardware.display.config \
     vendor.qti.hardware.display.config-V1-ndk.vendor \
     vendor.qti.hardware.display.config-V2-ndk.vendor \
@@ -160,11 +161,17 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.config-V5-ndk \
     vendor.qti.hardware.display.config-V5-ndk.vendor \
     vendor.qti.hardware.display.config-V6-ndk.vendor \
+    vendor.qti.hardware.display.config-V7-ndk.vendor \
+    vendor.qti.hardware.display.config-V8-ndk.vendor \
+    vendor.qti.hardware.display.config-V9-ndk.vendor \
+    vendor.qti.hardware.display.config-V10-ndk.vendor \
     vendor.qti.hardware.display.demura-service \
+    vendor.qti.hardware.display.demura-V1-ndk \
     vendor.qti.hardware.display.mapper@1.1.vendor \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
-    vendor.qti.hardware.display.mapper@4.0.vendor
+    vendor.qti.hardware.display.mapper@4.0.vendor \
+    vendor.qti.hardware.display.postproc-V1-ndk
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
@@ -260,6 +267,10 @@ PRODUCT_PACKAGES += \
     ueventd.oplus.rc \
     ueventd.qcom.rc
 
+# IR Blaster
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.consumerir.xml
+
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor \
@@ -307,7 +318,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
-    libcodec2_hidl@1.0.vendor \
+    libcodec2_hidl_plugin \
+    libcodec2_hidl@1.2.vendor \
     libcodec2_vndk.vendor \
     libpalclient
 
@@ -322,7 +334,7 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
-    android.hardware.secure_element@1.2.vendor \
+    android.hardware.secure_element-service.qti \
     com.android.nfc_extras \
     Tag
 
@@ -468,7 +480,7 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.qti-v2
+    android.hardware.thermal-service.qti
 
 # Touch
 PRODUCT_PACKAGES += \
@@ -490,7 +502,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service-qti
+    android.hardware.usb-service.qti
 
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/usb/etc
